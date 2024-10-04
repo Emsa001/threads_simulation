@@ -6,7 +6,7 @@ This project uses threads and mlx to show how much faster multithreading is comp
 1. **Clone the repository**:
     ```sh
     git clone https://github.com/emsa001/threads_simulation.git
-    cd ft_async
+    cd threads_simulation
     ```
 
 2. **Build the project**:
