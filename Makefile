@@ -1,10 +1,11 @@
 # Variables
 CC = gcc
-CFLAGS = -Imlx -Wall -Wextra -Werror
+CFLAGS = -Iincludes -Wall -Wextra -Werror
 CFLAGS += -g -pthread -Ofast
-LDFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+LDFLAGS = -Lincludes/mlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS += -Iincludes
 NAME = simulation
-SRC = $(wildcard *.c)
+SRC = $(wildcard src/*.c)
 OBJ = $(SRC:.c=.o)
 
 all: mlx $(NAME)
@@ -18,7 +19,7 @@ $(NAME): $(OBJ)
 
 # Build mlx library
 mlx:
-	$(MAKE) -C mlx
+	$(MAKE) -C includes/mlx
 
 # Clean rule
 clean:
@@ -26,7 +27,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C mlx clean
+	$(MAKE) -C includes/mlx clean
 
 re: fclean $(NAME)
 

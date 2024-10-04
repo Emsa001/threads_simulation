@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
-#include "mlx.h"
+#include "mlx/mlx.h"
 
 #define WIDTH 800
 #define HEIGHT 800
